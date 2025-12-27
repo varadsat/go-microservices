@@ -1,0 +1,28 @@
+# Binaries
+bin/
+dist/
+*.exe
+*.out
+
+# Go build cache
+*.test
+coverage.out
+
+# Go workspace
+go.work
+go.work.sum
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/

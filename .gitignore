@@ -1,0 +1,45 @@
+################################
+# Global ignores
+################################
+.env
+.env.*
+*.log
+
+################################
+# Go
+################################
+**/bin/
+**/dist/
+**/*.exe
+**/*.out
+**/*.test
+**/coverage.out
+
+# Go workspace
+go.work
+go.work.sum
+
+################################
+# Node / Bun (if any services use it)
+################################
+**/node_modules/
+**/.bun/
+**/.npm/
+**/.pnpm-store/
+
+################################
+# Docker
+################################
+**/.docker/
+**/tmp/
+
+################################
+# IDE / OS
+################################
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Database volumes
+project/db-data/
