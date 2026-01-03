@@ -17,6 +17,8 @@ services:
       context: ./../logger-service
       dockerfile: ./../logger-service/logger-service.dockerfile
     restart: always
+    ports:
+      - "6060:80"
     deploy:
       mode: replicated
       replicas: 1
@@ -49,7 +51,7 @@ services:
     volumes:
       - ./db-data/postgres:/var/lib/postgresql/data
 
-  mongo:
+  mongo-db:
     image: 'mongo:4.2.16-bionic'
     ports:
     - "27017:27017"
