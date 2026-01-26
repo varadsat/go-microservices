@@ -85,3 +85,21 @@ services:
       - MAIL_PASSWORD=""
       - FROM_NAME="John Smith"
       - FROM_ADDRESS=john.smith@example.com
+
+  rabbitmq:
+    image: 'rabbitmq:4.2.2-alpine'
+    ports: 
+    - "5672:5672"
+    deploy:
+      mode: replicated
+      replicas: 1
+    volumes: 
+    - ./db-data/rabbitmq/:/var/lib/rabbitmq/
+
+  listener-service:
+    build:
+      context: ./../listener-service
+      dockerfile: ./../listener-service/listener-service.dockerfile
+    deploy:
+      mode: replicated
+      replicas: 1
